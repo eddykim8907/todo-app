@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/1473061a29.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <div class="search">
+        <input type="text" class="todo-input" />
+        <button class="todo-input-btn">Add Item</button>
+      </div>
+      <section class="todo-calendar-section">
+        <div class="current-date-wrapper">
+          <div class="current-date-big">
+            <p>25</p>
+          </div>
+          <div class="current-date-small">
+            <div class="current-date-small-text">
+              <p>Sunday,</p>
+              <p>Feb 2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="days-of-week">
+          <div class="day">
+            <p>SUN</p>
+            <p>25</p>
+          </div>
+          <div class="day">
+            <p>MON</p>
+            <p>26</p>
+          </div>
+          <div class="day">
+            <p>TUE</p>
+            <p>27</p>
+          </div>
+          <div class="day">
+            <p>WED</p>
+            <p>28</p>
+          </div>
+          <div class="day">
+            <p>THU</p>
+            <p>29</p>
+          </div>
+          <div class="day">
+            <p>FRI</p>
+            <p>01</p>
+          </div>
+          <div class="day">
+            <p>SAT</p>
+            <p>02</p>
+          </div>
+        </div>
+        <div class="hamburger-btn">
+          <i class="fa-solid fa-bars hamburger-btn-icon"></i>
+          <i class="fa-solid fa-caret-up caret-btn-icon"></i>
+
+          <div class="dropdown-menu">
+            <div class="dropdown-menu-item">
+              <i class="fa-solid fa-user"></i>
+              <p>Profile</p>
+            </div>
+            <div class="dropdown-menu-item">
+              <i class="fa-solid fa-circle-question"></i>
+              <p>Help</p>
+            </div>
+            <div class="dropdown-menu-item">
+              <i class="fa-solid fa-gear"></i>
+              <p>Settings</p>
+            </div>
+            <div class="dropdown-menu-item">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <p>Logout</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="todo-list-section">
+        <div class="checkbox-item">
+          <input type="checkbox" id="check1" class="toggle" />
+          <label for="check1">
+            <div class="container">
+              <p>Brush Teeth</p>
+              <p class="time-text">6:00 AM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i>
+          </label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check2" class="toggle" />
+          <label for="check2">
+            <div class="container">
+              <p>Shower</p>
+              <p class="time-text">6:00 AM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i>
+          </label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check3" class="toggle" />
+          <label for="check3"
+            ><div class="container">
+              <p>Get Dressed</p>
+              <p class="time-text">6:30 AM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i>
+          </label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check4" class="toggle" />
+          <label for="check4"
+            ><div class="container">
+              <p>Remember to pack passport</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
+          ></label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check5" class="toggle" />
+          <label for="check5"
+            ><div class="container">
+              <p>Arrive at airport</p>
+              <p class="time-text">9:00 AM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
+          ></label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check6" class="toggle" />
+          <label for="check6"
+            ><div class="container">
+              <p>Check-in with airline</p>
+              <p class="time-text">12:00 PM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
+          ></label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check7" class="toggle" />
+          <label for="check7"
+            ><div class="container">
+              <p>Board plane</p>
+              <p class="time-text">1:30 PM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
+          ></label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check8" class="toggle" />
+          <label for="check8"
+            ><div class="container">
+              <p>Arrive in Haneda</p>
+              <p class="time-text">3:30 PM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
+          ></label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check9" class="toggle" />
+          <label for="check9"
+            ><div class="container">
+              <p>Meet up</p>
+              <p class="time-text">4:30 PM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
+          ></label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check10" class="toggle" />
+          <label for="check10"
+            ><div class="container">
+              <p>Grab late lunch/dinner</p>
+              <p class="time-text">5:00 PM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
+          ></label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="check11" class="toggle" />
+          <label for="check11"
+            ><div class="container">
+              <p>Arrive at hotel</p>
+              <p class="time-text">7:00 PM</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
+          ></label>
+        </div>
+      </section>
+      <section class="todo-add-section">
+        <div class="todo-add-btn-wrapper">
+          <div class="todo-add-btn">
+            <i class="fa-solid fa-plus todo-add-btn-icon"></i>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

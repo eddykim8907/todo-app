@@ -1,0 +1,398 @@
+:root {
+  --main-gradient: linear-gradient(to right, #753a88, #cc2b5e);
+  --body-gradient: linear-gradient(to right, #bfe9ff, #ff6e7f);
+  --menu-txt: rgba(74, 74, 74, 0.586);
+  --white: rgb(252, 252, 252);
+  --red-highlight: rgba(208, 85, 85, 0.821);
+}
+
+/* animations */
+@keyframes rotateForward {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotateBackward {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+/* elements */
+body {
+  background: var(--body-gradient);
+  font-family: "Poppins", sans-serif;
+}
+main {
+  width: 100%;
+  max-width: 360px;
+  margin: auto;
+  height: 800px;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.todo-calendar-section {
+  width: 100%;
+  background: var(--main-gradient);
+  height: 20%;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;
+}
+.hamburger-btn {
+  position: absolute;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  top: 20%;
+  right: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.hamburger-btn-icon {
+  color: var(--white);
+  font-size: 20px;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.35);
+}
+.hamburger-btn:hover .hamburger-btn-icon {
+  scale: 1.2;
+  transition: scale 0.1s linear, opacity 0.1s linear;
+  opacity: 0;
+}
+.hamburger-btn:not(:hover) .hamburger-btn-icon {
+  scale: 1;
+  opacity: 1;
+  transition: scale 0.2s linear, opacity 0.1s linear;
+}
+
+.dropdown-menu {
+  opacity: 0%;
+  height: 0px;
+  width: 120px;
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  z-index: 100;
+  overflow-y: scroll;
+  border-radius: 10px;
+  background-color: var(--white);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.dropdown-menu-item > i {
+  margin-right: 10px;
+}
+
+.dropdown-menu-item {
+  padding: 15px;
+  color: var(--menu-txt);
+  box-sizing: border-box;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-weight: 600;
+}
+.dropdown-menu-item:first-child {
+  padding-top: 20px;
+}
+.dropdown-menu-item {
+  font-size: 10px;
+}
+
+.dropdown-menu-item:hover {
+  color: var(--red-highlight);
+  transition: color 0.2s linear;
+}
+.caret-btn-icon {
+  color: transparent;
+  font-size: 24px;
+  position: absolute;
+}
+.hamburger-btn:hover .caret-btn-icon {
+  animation: rotateForward 0.3s forwards;
+}
+.hamburger-btn:not(:hover) .caret-btn-icon {
+  animation: rotateBackward 0.3s forwards;
+}
+.hamburger-btn:hover .caret-btn-icon {
+  color: var(--white);
+  text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.255);
+}
+.hamburger-btn:hover .dropdown-menu {
+  height: 130px;
+  opacity: 100%;
+  transition: opacity 0.2s linear;
+}
+.dropdown-menu::-webkit-scrollbar {
+  display: none;
+}
+.todo-list-section {
+  background-color: var(--white);
+  overflow-y: scroll;
+  height: 80%;
+  border-radius: 0px 0px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.todo-list-section::-webkit-scrollbar {
+  display: none;
+}
+.todo-input {
+  padding: 10px 6px;
+  flex: 1;
+}
+.toggle {
+  opacity: 0;
+  position: absolute;
+  left: -9000px;
+  top: -9000px;
+  cursor: pointer;
+}
+.toggle + label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.toggle + label:before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0);
+  content: "\002B";
+  font-size: 24px;
+  min-width: 30px;
+  height: 30px;
+  background-color: var(--white);
+  border: 2px solid rgba(141, 141, 141, 0.507);
+  box-sizing: border-box;
+  border-radius: 1em;
+  margin-right: 0.25em;
+}
+.toggle + label:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  content: "\2713";
+  color: var(--white);
+  min-width: 30px;
+  height: 30px;
+  background-color: #da658a;
+  border-radius: 1em;
+  margin-right: 0.25em;
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+}
+
+.toggle:hover + label:before {
+  color: rgba(141, 141, 141, 0.507);
+  transition: color 0.2s linear;
+}
+.toggle:not(:hover) + label:before {
+  color: rgba(141, 141, 141, 0);
+  transition: color 0.2s linear;
+}
+.toggle:checked + label:after {
+  opacity: 100%;
+  transform: translateX(0%);
+  transition: opacity 0.2s linear, transform 0.1s cubic-bezier(0.56, 0, 1, 0.32);
+}
+.toggle:not(:checked) + label:after {
+  opacity: 0;
+  transform: translateX(-150%);
+  transition: opacity 0.2s linear, transform 0.2s cubic-bezier(0.56, 0, 1, 0.32);
+}
+.container {
+  margin-left: 24px;
+  text-align: start;
+  line-height: 16px;
+  color: #5f2b68e1;
+  font-weight: 500;
+}
+.time-text {
+  font-size: 10px;
+  opacity: 60%;
+}
+.toggle:checked + label .container {
+  color: #be476d5b;
+  text-decoration: line-through;
+  transition: color 0.2s linear !important;
+}
+
+.checkbox-item {
+  padding: 16px;
+  position: relative;
+}
+.container p {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Number of lines to show before overflow-hidden/ellipses kicks in */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+.checkbox-icon {
+  position: absolute;
+  right: 2px;
+  top: 1px;
+  font-size: 19px;
+  color: transparent;
+  cursor: pointer;
+}
+.checkbox-item:hover .checkbox-icon {
+  scale: 1.1;
+  color: rgba(0, 0, 0, 0.4);
+  transition: color 0.2s linear, scale 0.2s linear;
+}
+
+.checkbox-item:hover .container {
+  transform: scale(1.1); /* Adjust the scale factor as needed */
+  transform-origin: left; /* Ensure the scaling starts from the left side */
+  transition: transform 0.1s linear !important; /* Apply transition only to scaling */
+}
+
+.checkbox-item:hover {
+  transition: background-color 0.2s linear;
+  border-bottom: 0px;
+  border-top: 0px;
+}
+
+.current-date-wrapper {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  margin-bottom: 16px;
+}
+.current-date-big {
+  height: 100%;
+  width: 22%;
+  font-size: 48px;
+  font-weight: bolder;
+  color: var(--white);
+  box-sizing: border-box;
+  position: relative;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.35);
+}
+.current-date-big p {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+}
+.current-date-small {
+  height: 100%;
+  flex: 1;
+  position: relative;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 16px;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.35);
+}
+.current-date-small p {
+  text-align: start;
+  line-height: 18px;
+}
+.current-date-small-text {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+}
+.days-of-week {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--white);
+  padding: 8px 0px;
+  box-sizing: border-box;
+}
+
+.day {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.day p:first-child {
+  color: rgba(255, 255, 255, 0.518);
+  margin-bottom: 3px;
+}
+
+.day:first-child {
+  background-color: var(--white);
+  color: #c92c5f;
+  font-weight: 600;
+  height: 45px;
+  width: 45px;
+}
+.day:first-child p:first-child {
+  color: #c92c5ead;
+  font-weight: 600;
+}
+
+.day:not(:first-child):hover {
+  background-color: #5f2b6865;
+  scale: 1.2;
+  transition: background-color 0.2s linear, scale 0.1s linear;
+  cursor: pointer;
+}
+
+.todo-add-btn-wrapper {
+  bottom: 0;
+  right: 33%;
+  position: absolute;
+  height: 100px;
+  width: 110px;
+  background-color: rgba(239, 135, 0, 0);
+  display: flex;
+  justify-content: end;
+}
+
+.todo-add-btn {
+  background-color: transparent;
+  height: 60px;
+  width: 60px;
+  margin-right: 30px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.todo-add-btn-wrapper:hover .todo-add-btn {
+  background: var(--main-gradient);
+  scale: 1.2;
+  transition: background-color 0.2s linear, scale 0.1s linear, color 0.2s linear;
+  cursor: pointer;
+  color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.todo-add-btn-wrapper:active .todo-add-btn {
+  scale: 1.4;
+}
