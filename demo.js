@@ -31,25 +31,22 @@ function hi(name) {
   console.log(`Hi` + ` ` + name);
 }
 
-hi(`Eddy`);
-
-const resultOfSum = sum(100, 200);
-console.log(resultOfSum);
-
 //homework
-for (let i = 1, j = 1; i < 10; j++) {
-  console.log(i * j);
+for (let i = 1, j = 1; i < 10; ) {
+  console.log(`${i} * ${j} = ${i * j}`);
   if (j === 9) {
     i++, (j = 1);
+  } else {
+    j++;
   }
 }
 
 for (let i = 1, j = 1; i < 10; j === 9 ? i++ && (j = 1) : j++) {
-  console.log(i * j);
+  console.log(`${i} * ${j} = ${i * j}`);
 }
 
 for (let i = 1; i < 10; i++) {
   for (let j = 1; j < 10; j++) {
-    console.log(i * j);
+    console.log(`${i} * ${j} = ${i * j}`);
   }
 }
