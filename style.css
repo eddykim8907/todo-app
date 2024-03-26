@@ -150,9 +150,77 @@ main {
 .todo-list-section::-webkit-scrollbar {
   display: none;
 }
+
+.todo-input::placeholder,
+.todo-time-input::placeholder,
+.todo-icon,
+.time-icon {
+  color: rgba(100, 100, 100, 0.596);
+}
+.input-wrap1,
+.input-wrap2 {
+  display: flex;
+  justify-content: space-evenly;
+}
 .todo-input {
-  padding: 10px 6px;
-  flex: 1;
+  color: var(--red-highlight);
+  border: none;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.241);
+  font-family: "Poppins", sans-serif;
+  width: 50%;
+}
+.todo-time-input {
+  width: 50%;
+  border: none;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.241);
+  color: var(--red-highlight);
+}
+
+.todo-input:hover {
+  border-bottom: 1px solid var(--red-highlight);
+  transition: border-bottom 0.2s linear;
+}
+
+.todo-time-input:hover {
+  border-bottom: 1px solid var(--red-highlight);
+  transition: border-bottom 0.2s linear;
+}
+
+.input-wrap1:hover .todo-icon {
+  color: var(--red-highlight);
+  transition: color 0.2s linear;
+}
+
+.input-wrap2:hover .time-icon {
+  color: var(--red-highlight);
+  transition: color 0.2s linear;
+}
+.todo-input-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  color: rgba(100, 100, 100, 0.596);
+}
+
+.todo-input-btn:hover {
+  color: var(--red-highlight);
+  transition: color 0.2s linear;
+}
+.search {
+  border-radius: 10px;
+  padding-top: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 .toggle {
   opacity: 0;
@@ -239,6 +307,7 @@ main {
 .checkbox-item {
   padding: 16px;
   position: relative;
+  border-bottom: 1px solid rgba(52, 52, 52, 0.283);
 }
 .container p {
   display: -webkit-box;
@@ -250,8 +319,8 @@ main {
 }
 .checkbox-icon {
   position: absolute;
-  right: 2px;
-  top: 1px;
+  right: 20px;
+  top: 18px;
   font-size: 19px;
   color: transparent;
   cursor: pointer;
@@ -262,15 +331,15 @@ main {
   transition: color 0.2s linear, scale 0.2s linear;
 }
 
-.checkbox-item:hover .container {
-  transform: scale(1.1); /* Adjust the scale factor as needed */
+.checkbox-item:hover .container p {
+  transform: scale(1.05); /* Adjust the scale factor as needed */
   transform-origin: left; /* Ensure the scaling starts from the left side */
   transition: transform 0.1s linear !important; /* Apply transition only to scaling */
 }
 
 .checkbox-item:hover {
   transition: background-color 0.2s linear;
-  border-bottom: 0px;
+
   border-top: 0px;
 }
 
@@ -395,4 +464,13 @@ main {
 
 .todo-add-btn-wrapper:active .todo-add-btn {
   scale: 1.4;
+}
+
+.search {
+  position: absolute;
+  height: 150px;
+  width: 200px;
+  z-index: 2;
+  bottom: 120px;
+  left: 80px;
 }

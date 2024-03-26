@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/todo-app-main/reset.css" />
+    <link rel="stylesheet" href="/todo-app-main/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +20,17 @@
   <body>
     <main>
       <div class="search">
-        <input type="text" class="todo-input" />
+        <div class="input-field">
+          <div class="input-wrap1">
+            <i class="fa-solid fa-clipboard-list todo-icon"></i>
+            <input type="text" class="todo-input" placeholder="Add Task" />
+          </div>
+
+          <div class="input-wrap2">
+            <i class="fa-regular fa-clock time-icon"></i>
+            <input type="text" class="todo-time-input" placeholder="Add Time" />
+          </div>
+        </div>
         <button class="todo-input-btn">Add Item</button>
       </div>
       <section class="todo-calendar-section">
@@ -89,117 +99,7 @@
           </div>
         </div>
       </section>
-      <section class="todo-list-section">
-        <div class="checkbox-item">
-          <input type="checkbox" id="check1" class="toggle" />
-          <label for="check1">
-            <div class="container">
-              <p>Brush Teeth</p>
-              <p class="time-text">6:00 AM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i>
-          </label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check2" class="toggle" />
-          <label for="check2">
-            <div class="container">
-              <p>Shower</p>
-              <p class="time-text">6:00 AM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i>
-          </label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check3" class="toggle" />
-          <label for="check3"
-            ><div class="container">
-              <p>Get Dressed</p>
-              <p class="time-text">6:30 AM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i>
-          </label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check4" class="toggle" />
-          <label for="check4"
-            ><div class="container">
-              <p>Remember to pack passport</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
-          ></label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check5" class="toggle" />
-          <label for="check5"
-            ><div class="container">
-              <p>Arrive at airport</p>
-              <p class="time-text">9:00 AM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
-          ></label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check6" class="toggle" />
-          <label for="check6"
-            ><div class="container">
-              <p>Check-in with airline</p>
-              <p class="time-text">12:00 PM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
-          ></label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check7" class="toggle" />
-          <label for="check7"
-            ><div class="container">
-              <p>Board plane</p>
-              <p class="time-text">1:30 PM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
-          ></label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check8" class="toggle" />
-          <label for="check8"
-            ><div class="container">
-              <p>Arrive in Haneda</p>
-              <p class="time-text">3:30 PM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
-          ></label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check9" class="toggle" />
-          <label for="check9"
-            ><div class="container">
-              <p>Meet up</p>
-              <p class="time-text">4:30 PM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
-          ></label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check10" class="toggle" />
-          <label for="check10"
-            ><div class="container">
-              <p>Grab late lunch/dinner</p>
-              <p class="time-text">5:00 PM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
-          ></label>
-        </div>
-        <div class="checkbox-item">
-          <input type="checkbox" id="check11" class="toggle" />
-          <label for="check11"
-            ><div class="container">
-              <p>Arrive at hotel</p>
-              <p class="time-text">7:00 PM</p>
-            </div>
-            <i class="fa-solid fa-ellipsis-vertical checkbox-icon"></i
-          ></label>
-        </div>
-      </section>
+      <section class="todo-list-section"></section>
       <section class="todo-add-section">
         <div class="todo-add-btn-wrapper">
           <div class="todo-add-btn">
@@ -208,7 +108,7 @@
         </div>
       </section>
     </main>
-    <!-- <script src="/main.js"></script> -->
-    <script src="/demo.js"></script>
+    <script src="/todo-app-main/main.js"></script>
+    <!-- <script src="/youtube-clone/todo-app-main/demo.js"></script> -->
   </body>
 </html>
